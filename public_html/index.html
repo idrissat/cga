@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New Jersey Roadway LRS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="New Jersey LRS finder">
+        <meta name="keywords" content="GIS, New Jersey, Linear Referencing System">
+        <meta name="Author" content="NJDOT TMS">
+        <meta name="copyright" content="Copyright &copy; 2014 New Jersey DOT. All rights reserved."> 
+        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"/> 
+        <link rel="stylesheet" type="text/css" href="css/yahoocssreset.css"> 
+        <link rel="stylesheet" type="text/css" href="css/application.css" />
+        
+    </head>
+    <body>
+        <header>
+            <div id='projection'></div>
+        </header>
+        
+        <section itemscope>
+            <div id="map-canvas" itemprop="internet_mapping"></div>
+            <div class="push"></div>
+        </section>
+        <footer>
+            Copyright &copy; 2014 NJDOT TMS
+            <script>
+                var person={};
+                person.age = 23;
+                person.name='John';
+                person.toString = function(){
+                    return person.name + ',' + person.age;
+                };
+                person.f=function(){
+                    var args = Array.prototype.slice.call(arguments);
+                    for(p in person)
+                    console.log(p);
+                    console.log("arguments:",args[0],args[1],args[2]);
+                };
+                person.f('we','are',23);
+                var originalColorMap = {
+                    red:{red:255,green:0,blue:0,
+                        toString: function(){
+                            return this.red + ',' + this.green + ',' + this.blue;
+                        }
+                    },
+                    green:{red:0,green:255,blue:0},
+                    blue:{red:0,green:0,blue:255}
+                };
+                console.log(originalColorMap.red.toString());
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="js/libs/map/map.js"></script>
+        <script type="text/javascript" src="js/libs/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/projection/projUtils.js"></script>
+        <script>
+        var database;
+        function createDB(){
+            if(window.openDatabase){
+                var shortname = 'coordDB';
+                var displayname = 'coordinates database';
+                var version = '1.0';
+                var maxsize=1024;
+                database = openDatabase(shortname,version,displayname,maxsize);
+                database.transaction(function(tx){
+                                     tx.executeSql('create table if not exists coords(id integer primary key autoincrement, latitude real, longitude real,X real,Y real)');
+                                     
+                                     
+                                     });
+            }
+            
+            //database.transaction(function(tx){
+            //          tx.executeSql('insert into coords(latitude,longitude,X,Y) values(?,?,?,?)',[invproj.latitude,invproj.longitude,proj.x,proj.y]);
+            //      });
+        }
+    
+        </script>
+        </footer>
+    
+    
+    </body>
+</html>
+

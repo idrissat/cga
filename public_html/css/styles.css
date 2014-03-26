@@ -1,0 +1,198 @@
+/*** RESET ***/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video{
+    margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+    -webkit-text-size-adjust: 100%;
+	font-weight:inherit;
+    font-style:inherit;
+    font-family:inherit;
+	vertical-align:baseline;
+}
+table{
+    border-collapse:collapse;
+	border-spacing:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var{
+    font-style:normal;
+	font-weight:normal;
+}
+ol, ul {
+    list-style:none;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section{
+	display:block;
+}
+blockquote, q{
+	quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content:'';
+	content:none;
+}
+:focus {
+	outline:1px dotted #666;
+} 
+/** STICKY FOOTER **/
+html, body, .wrapper {
+    height: 100%;
+}
+body > .wrapper{
+    height:auto;
+    min-height:100%;
+    overflow:hidden;
+}
+.main{
+    overflow:hidden;
+}
+footer,.push{
+    height:2.0em;
+    clear:both
+}
+footer{
+    position:relative;
+    margin-top:-2.0em;
+}
+/** GENERAL STYLES **/
+html,*{
+    font-family:Helvetica,Arial, sans-serif; 
+}
+aside{
+    float:right;
+    width:200px;
+    padding:30px 0 10px 0;
+    margin:0 10px;
+    background-color:#E4E4E4;
+}
+nav{
+    background-color:#666
+}
+header{
+    color:#fff;
+    height:122px;
+    background:#1A1A1A url(../img/logo_back.png);
+}
+footer{
+    background-color:#000;
+    color:#fff;
+    font-size:.6em;
+    line-height:2em;
+    text-align:center;
+}
+/** RESPONSIVE WEB DESIGN MEDIA QUERIES **/
+.wrapper{
+    background-color:#fff;
+}
+.wrapper,footer{
+    width:960px;
+    margin-left:auto;
+    margin-right:auto;
+}
+header div{
+    width:320px;
+    height:122px;
+    background:url(../img/logo.png);
+}
+html,body{
+    background-color:#ccc;
+}
+.wrapper section,nav{
+    padding:5px 35px;
+}
+nav a{
+    color:#fff;
+    text-decoration:none;
+    
+}
+nav a:hover{
+    text-decoration:underline;
+}
+article h1{
+    font-size:1.5em;
+    margin:10px 0 5px;
+}
+aside ol{
+    padding:0 0 0 36px;
+    counter-reset:counter;
+}
+aside ol li:before {
+    counter-increment:counter;
+    content:counter(counter) ". ";
+    margin-right:5px;
+    color: #333;
+    position:absolute;
+    top:0;
+    left:-16px;
+}
+aside h2{
+    padding:0 20px 10px;
+    margin:0 0 20px;
+    border-bottom:1px dashed #fff;
+    font-size:1.3em;
+}
+aside li p{
+    color:#999;
+}
+aside li{
+    color:#666;
+    font-size:.8em;
+    line-height:1.2em;
+    margin:0 0 8px 0;
+    position:relative;
+}
+/** TABLETS **/
+@media only screen and (min-width: 738px) and (max-width: 1024px){
+   .wrapper,footer{
+        width:100%;
+    }
+}
+/** PHONES AND SMALL TABLETS **/
+@media only screen and (max-width: 737px){
+    aside{
+        display:none
+    }
+    .wrapper,footer{
+        width:100%;
+    }
+    .wrapper section,nav{
+        padding:5px 15px;
+    }
+    header div{
+        background-position:-50px 0px
+    }
+}
+/** RETINA DISPLAY IMAGES **/
+@media only screen and (-webkit-min-device-pixel-ratio:2),
+only screen and (min-device-pixel-ratio: 2){
+    header div{
+        background:url(../img/logo2x.png);
+        -webkit-background-size:320px 122px; 
+    }
+}
+/** IPAD RETINA DISPLAY SPECIFIC **/
+@media only screen and (-webkit-min-device-pixel-ratio:2) and (min-device-width: 768px) and (max-device-width: 1024px),
+only screen and (min-device-pixel-ratio: 2) and (min-device-width: 768px) and (max-device-width: 1024px){
+   .wrapper,footer{
+        width:100%;
+    }
+}
+/** IPHONE RETINA DISPLAY SPECIFIC **/
+@media only screen and (-webkit-min-device-pixel-ratio:2) and (max-device-width: 480px),
+only screen and (min-device-pixel-ratio: 2) and (max-device-width: 480px){
+    
+}
